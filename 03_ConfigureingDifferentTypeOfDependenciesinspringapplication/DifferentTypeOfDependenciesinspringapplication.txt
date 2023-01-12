@@ -1,0 +1,51 @@
+Configuration Different Type Of Dependencies INspring Application 
+
+without touching our class we reach all the dependencies is called a dependency resolution
+
+in a spring application on every instance variable defined as a spring Bean class can be the considered as a dependency
+
+
+spring Bean has 3 types of dependency
+
+1] simple value type dependency
+                    primitive type and string type
+                    Example -: int float double char string
+
+2] user-defined object type dependency
+                    here We Create various classes like student, Employee,Collage
+
+3] collection type of dependency
+                    Normal Array
+                    List 
+                    Map
+                    set
+                    map
+
+instance variable means any variable you define inside the class
+
+public class MyBusinessClass{
+
+//simple value type dependency
+int num;
+string name;
+
+
+
+
+//user-defined object type dependency
+Student stu;
+Collage coll;
+
+
+
+
+
+// collection type of dependency
+List<String> names;
+int[] array;
+
+
+
+
+
+}    

@@ -1,0 +1,37 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:context = "http://www.springframework.org/schema/context"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+   <context:annotation-config/>
+   <!-- bean definitions go here -->
+  
+  <bean id="tourist" class="com.masai.Tourist">
+  <constructor-arg  name="name" value="Sahil"/>
+  <constructor-arg name="age" value="21"/>
+  <constructor-arg name="aadhar_id" value="9873 5221"/>
+  </bean>
+  
+   <bean id="dateFormater" class="java.text.SimpleDateFormat">
+        <constructor-arg value="dd-MM-yyyy" />
+    </bean>
+  <bean name="holidaypackage" class="com.masai.HolidayPackage">
+  <property name="package_name" value="Way to Hawai"/>
+  <property name="tourist" ref="tourist"/>
+  <property name="package_expiry">
+  <bean factory-bean="dateFormater" factory-method="parse">
+                <constructor-arg value="23-03-20000" />
+   </bean>
+  </property>
+    <property name="package_price" value="50000"/>
+  </bean>
+  
+  
+
+
+</beans>
